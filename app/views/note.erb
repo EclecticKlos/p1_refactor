@@ -5,6 +5,13 @@
 
 <p><a href="/edit/<%= @note_title %>">Edit this note</a></p>
 
+<form action="/note/<%= @note_title %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE"/>
+  <input type="submit" value="Delete">
+</form>
+
+<p><a href="/">Home</a></p>
+
 </div>
 
 

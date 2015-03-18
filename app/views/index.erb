@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Deez Notes, Doe</h1>
-  <p>Here are your note titles</p>
+  <p>Here are your notes</p>
   <% @all_notes.each do |note| %>
   <p><a href="/note/<%= note.title %>"><%= note.title %></a></p>
   <% end %>

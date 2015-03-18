@@ -26,10 +26,19 @@ erb :edit
 end
 
 put '/note/:note_title' do
-  @note_title = params[:note_title]
-  @this_note = Note.where(title: @note_title).first
+  this_note = Note.where(title: params[:note_title]).first
+  this_note.title = params[:title]
+  this_note.content = params[:content]
+  this_note.save
 
-  redirect '/note/' + @note_title
+  redirect '/note/' + params[:title]
+end
+
+delete '/note/:note_title' do
+  this_note = Note.where(title: params[:note_title]).first
+  this_note.destroy
+
+  redirect '/'
 end
 
 

@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Deez Notes, Doe</h1>
+  <p>Here are your note titles</p>
+  <% @all_notes.each do |note| %>
+  <p><a href="/note/<%= note.title %>"><%= note.title %></a></p>
+  <% end %>
+
+<form action="/" method="POST">
+  Create note
+  <br>
+  Note title:
+  <input type="text" name="title" rows="1" cols="30" placeholder="Thank Marsha">
+  </input>
+  <br>
+  Note content:
+  <textarea name="content" rows="8" cols="30" placeholder="For all the good times and stuff"></textarea>
+  <br>
+  <input type="submit" value="Create!">
+</form>
+
+</div>

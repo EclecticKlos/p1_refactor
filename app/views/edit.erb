@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Deez Notes, Doe</h1>
+  <h3>Edit this note</h3>
+  <p><%= @this_note.content %> </p>
+
+
+  <form action="/note/<%= @note_title %>" method="POST">
+    <input type="hidden" name="_method" value="PUT"/>
+  Note title:
+  <input type="text" name="title" rows="1" cols="70" value="<%= @note_title %>">
+  </input>
+  <br>
+  Note content:
+  <input type="textarea" name="content" rows="8" cols="30" value="<%= @this_note.content %>">
+  </input>
+  <br>
+  <input type="submit" value="Update!">
+</form>
+
+  <input name="_method" type="hidden" value="put" />
+
+</div>

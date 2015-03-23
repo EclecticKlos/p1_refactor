@@ -5,7 +5,7 @@
 
 <p><a href="/notes/<%= @this_note.id %>/edit">Edit this note</a></p>
 
-<form action="/note/<%= @this_note.title %>" method="POST">
+<form action="/notes/<%= @this_note.id %>" method="POST">
   <input type="hidden" name="_method" value="DELETE"/>
   <input type="submit" value="Delete">
 </form>

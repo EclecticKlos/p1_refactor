@@ -13,18 +13,18 @@ post '/' do
 end
 
 get '/notes/:id' do
-  @this_note = Note.find_by(id: params[:id])
+  @this_note = Note.find(params[:id])
   erb :note
 end
 
 get '/notes/:id/edit' do
-  @this_note = Note.find_by(id: params[:id])
+  @this_note = Note.find(params[:id])
 
 erb :edit
 end
 
 put '/notes/:id' do
-  this_note = Note.where(id: params[:id]).first
+  this_note = Note.find(params[:id])
   this_note.title = params[:title]
   this_note.content = params[:content]
   this_note.save
@@ -33,7 +33,7 @@ put '/notes/:id' do
 end
 
 delete '/notes/:id' do
-  this_note = Note.find_by(id: params[:id])
+  this_note = Note.find(params[:id])
   this_note.destroy
 
   redirect '/'

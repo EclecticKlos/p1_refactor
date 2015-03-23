@@ -2,7 +2,7 @@
   <h1>Deez Notes, Doe</h1>
   <p>Here are your notes</p>
   <% @all_notes.each do |note| %>
-  <p><a href="/note/<%= note.title %>"><%= note.title %></a></p>
+  <p><a href="/note/<%= note.id %>"><%= note.id %></a></p>
   <% end %>
 
 <form action="/" method="POST">

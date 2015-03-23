@@ -4,10 +4,10 @@
   <p><%= @this_note.content %> </p>
 
 
-  <form action="/note/<%= @note_title %>" method="POST">
+  <form action="/notes/<%= @this_note.id %>" method="POST">
     <input type="hidden" name="_method" value="PUT"/>
   Note title:
-  <input type="text" name="title" rows="1" cols="70" value="<%= @note_title %>">
+  <input type="text" name="title" rows="1" cols="70" value="<%= @this_note.content %>">
   </input>
   <br>
   Note content:

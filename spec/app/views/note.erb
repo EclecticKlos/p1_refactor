@@ -1,11 +1,11 @@
 <div class="container">
   <h1>Deez Notes, Doe</h1>
-  <h3><%= @note_title %>:</h3>
+  <h3><%= @this_note.title %>:</h3>
   <%= @this_note.content %>
 
-<p><a href="/edit/<%= @note_title %>">Edit this note</a></p>
+<p><a href="/notes/<%= @this_note.id %>/edit">Edit this note</a></p>
 
-<form action="/note/<%= @note_title %>" method="POST">
+<form action="/note/<%= @this_note.title %>" method="POST">
   <input type="hidden" name="_method" value="DELETE"/>
   <input type="submit" value="Delete">
 </form>
